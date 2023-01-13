@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import Articles from "../components/Articles";
 import AniArticles from "../components/AniArticles";
 import Slide from "../components/Slide";
+import Transformimg from "../components/Transformimg";
 const Home = () => {
   const [ScrollPosition, setScrollPosition] = useState(0);
   const [Scrollcheck, setScrollcheck] = useState(false);
   const [LocalMousePos, setLocalMousePos] = useState({});
+  const [BannerCheck, setBannerCheck] = useState(false);
   const HandleMouseMove = (event) => {
     // 👇 Get mouse position relative to element
     const localX = event.clientX - event.target.offsetLeft;
@@ -20,6 +22,7 @@ const Home = () => {
     setScrollPosition(Position);
     Scrollcheck ? setScrollcheck(false) : setScrollcheck(true);
   };
+  console.log(BannerCheck);
   useEffect(() => {
     window.addEventListener("scroll", HandleScroll, { passive: true });
     window.addEventListener("mousemove", HandleMouseMove);
@@ -48,40 +51,38 @@ const Home = () => {
             </div>
           </div>
           <div className="flex absolute left-[50%] top-[170%] translate-x-[-50%] ">
-            <a>
-              <div className="uppercase font-bold">with lifeat</div>
+            <a className="cursor-pointer">
+              <div
+                className={`uppercase font-bold cursor-pointer ${
+                  BannerCheck ? "" : "border-b-2 border-black"
+                }`}
+                onClick={() => {
+                  setBannerCheck(false);
+                }}
+              >
+                with lifeat
+              </div>
             </a>
-            <a className="ml-10 ">
-              <div className="uppercase font-bold">without lifeat</div>
+            <a className="ml-10 cursor-pointer">
+              <div
+                className={`uppercase font-bold cursor-pointer ${
+                  BannerCheck ? "border-b-2 border-black" : ""
+                }`}
+                onClick={() => {
+                  setBannerCheck(true);
+                }}
+              >
+                without lifeat
+              </div>
             </a>
           </div>
         </div>
       </div>
-      <div className="item flex justify-center relative z-10">
-        <img src={Images.lap} alt="" className="relative " />
-        <img
-          src={Images.face}
-          alt=""
-          className="absolute will-change-transform"
-          style={{
-            transform: `translate3d(${
-              -ScrollPosition / 100
-            }%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-            transformStyle: "preserve-3d",
-          }}
-        />
-        <img
-          src={Images.list}
-          alt=""
-          className="absolute will-change-transform"
-          style={{
-            transform: `translate3d(${
-              ScrollPosition / 100
-            }%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-            transformStyle: "preserve-3d",
-          }}
-        />
-      </div>
+      {BannerCheck ? (
+        <img src={Images.without} className="relative z-10 mx-auto" />
+      ) : (
+        <Transformimg ScrollPosition={ScrollPosition} />
+      )}
       <div className="brand_ads py-40">
         <p className="text-4xl font-bold text-thBlack text-center">
           Trusted by
