@@ -3,7 +3,7 @@ import {FaBars,FaTimes} from 'react-icons/fa'
 import Home from '../pages/Home'
 import {
     BrowserRouter,
-   RoutesFromElements,
+    RoutesFromElements,
     Route,
     RouterProvider,
     Routes,
