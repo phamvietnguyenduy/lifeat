@@ -1,33 +1,28 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Home from "../pages/Home";
-import {
-  BrowserRouter,
-  RoutesFromElements,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./Footer";
-const Header = ({ checkmenu, setcheckmenu }) => {
-  const menu = [
-    {
-      id: 1,
-      name: "Explore",
-    },
-    {
-      id: 2,
-      name: "Usecases",
-    },
-    {
-      id: 3,
-      name: "Pricing",
-    },
-    {
-      id: 4,
-      name: "Careers",
-    },
-  ];
+//Pages
+const Home = lazy(() => import("../pages/Home/Home"));
+const menu = [
+  {
+    id: 1,
+    name: "Explore",
+  },
+  {
+    id: 2,
+    name: "Usecases",
+  },
+  {
+    id: 3,
+    name: "Pricing",
+  },
+  {
+    id: 4,
+    name: "Careers",
+  },
+];
+const Header = ({ checkMenu, setCheckMenu }) => {
   return (
     <div>
       <div className="fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10">
@@ -58,21 +53,18 @@ const Header = ({ checkmenu, setcheckmenu }) => {
             </div>
           </div>
           <div
-            onClick={() => setcheckmenu(!checkmenu)}
+            onClick={() => setCheckMenu(!checkMenu)}
             className="block lg:hidden text-gray-700"
           >
-            {checkmenu ? <FaTimes size={30} /> : <FaBars size={30} />}
+            {checkMenu ? <FaTimes size={30} /> : <FaBars size={30} />}
           </div>
         </div>
       </div>
       {/* mobile-menu */}
       <div
-        className={` w-full bg-black text-gray-700 absolute z-10 left-0 h-fit lg:hidden py-12 flex justify-center text-center duration-500 
-                        ${
-                          checkmenu
-                            ? "top-20 rounded-2xl opacity-95"
-                            : "top-[-100%]"
-                        }`}
+        className={` ${
+          checkMenu ? "top-20 rounded-2xl opacity-95" : "top-[-100%]"
+        }  w-full bg-black text-gray-700 absolute z-10 left-0 h-fit lg:hidden py-12 flex justify-center text-center duration-500 `}
       >
         <ul>
           {menu.map(({ id, name }) => (
@@ -86,9 +78,11 @@ const Header = ({ checkmenu, setcheckmenu }) => {
         </ul>
       </div>
       {/* routing */}
-      <Routes>
-        <Route path="/*" element={<Home />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/*" element={<Home />} />
+        </Routes>
+      </Suspense>
       <div className="pt-32 py-16">
         <Footer />
       </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import "animate.css";
-import { useState, useEffect } from "react";
-import { Player, ControlBar } from "video-react";
-import Fade from "react-reveal/Fade";
-import Images from "../assets/images";
-import videoposter from "../assets/images/videoposter.mp4";
+// import { useState, useEffect } from "react";
+// import { Player, ControlBar } from "video-react";
+
+// import Images from "../../assets/images";
+import videoposter from "../../assets/images/videoposter.mp4";
 
 const Articles = ({ Scrollcheck }) => {
   let y = 0;

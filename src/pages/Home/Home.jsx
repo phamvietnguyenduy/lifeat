@@ -1,34 +1,34 @@
-import React from "react";
-import Images from "../assets/images";
-import { useState, useEffect } from "react";
-import Articles from "../components/Articles";
-import AniArticles from "../components/AniArticles";
-import Slide from "../components/Slide";
-import Transformimg from "../components/Transformimg";
+import React, { useState, useEffect } from "react";
+import Images from "../../assets/images";
+import Articles from "./Articles";
+import AniArticles from "./AniArticles";
+import Slide from "./Slide";
+import Transformimg from "./Transformimg";
+import { Link } from "react-router-dom";
 const Home = () => {
-  const [ScrollPosition, setScrollPosition] = useState(0);
-  const [Scrollcheck, setScrollcheck] = useState(false);
-  const [LocalMousePos, setLocalMousePos] = useState({});
-  const [BannerCheck, setBannerCheck] = useState(false);
-  const HandleMouseMove = (event) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollCheck, setScrollCheck] = useState(false);
+  const [localMousePos, setLocalMousePos] = useState({});
+  const [bannerCheck, setBannerCheck] = useState(false);
+  const handleMouseMove = (event) => {
     // 👇 Get mouse position relative to element
     const localX = event.clientX - event.target.offsetLeft;
     const localY = event.clientY - event.target.offsetTop;
 
     setLocalMousePos({ x: localX, y: localY });
   };
-  const HandleScroll = () => {
-    const Position = window.pageYOffset;
-    setScrollPosition(Position);
-    Scrollcheck ? setScrollcheck(false) : setScrollcheck(true);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+    scrollCheck ? setScrollCheck(false) : setScrollCheck(true);
   };
-  console.log(BannerCheck);
+  console.log(bannerCheck);
   useEffect(() => {
-    window.addEventListener("scroll", HandleScroll, { passive: true });
-    window.addEventListener("mousemove", HandleMouseMove);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener("scroll", HandleScroll);
-      window.removeEventListener("mousemove", HandleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
   return (
@@ -51,10 +51,10 @@ const Home = () => {
             </div>
           </div>
           <div className="flex absolute left-[50%] top-[170%] translate-x-[-50%] ">
-            <a className="cursor-pointer">
+            <Link className="cursor-pointer">
               <div
                 className={`uppercase font-bold cursor-pointer ${
-                  BannerCheck ? "" : "border-b-2 border-black"
+                  bannerCheck ? "" : "border-b-2 border-black"
                 }`}
                 onClick={() => {
                   setBannerCheck(false);
@@ -62,11 +62,11 @@ const Home = () => {
               >
                 with lifeat
               </div>
-            </a>
-            <a className="ml-10 cursor-pointer">
+            </Link>
+            <Link className="ml-10 cursor-pointer">
               <div
                 className={`uppercase font-bold cursor-pointer ${
-                  BannerCheck ? "border-b-2 border-black" : ""
+                  bannerCheck ? "border-b-2 border-black" : ""
                 }`}
                 onClick={() => {
                   setBannerCheck(true);
@@ -74,14 +74,18 @@ const Home = () => {
               >
                 without lifeat
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
-      {BannerCheck ? (
-        <img src={Images.without} className="relative z-10 mx-auto" />
+      {bannerCheck ? (
+        <img
+          src={Images.without}
+          className="relative z-10 mx-auto"
+          alt="banner"
+        />
       ) : (
-        <Transformimg ScrollPosition={ScrollPosition} />
+        <Transformimg scrollPosition={scrollPosition} />
       )}
       <div className="brand_ads py-40">
         <p className="text-4xl font-bold text-thBlack text-center">
@@ -104,17 +108,17 @@ const Home = () => {
         </p>
       </div>
       <div className="pb-40">
-        <Articles Scrollcheck={ScrollPosition} />
+        <Articles Scrollcheck={scrollPosition} />
       </div>
       <div className="pt-40">
         <AniArticles
-          Scrollcheck={ScrollPosition}
-          Ymin={2400}
-          Ymax={2840}
-          MousePos={LocalMousePos}
-          Src={Images.agif}
-          Tittle={"One-click to task and calendar"}
-          Content={
+          scrollCheck={scrollPosition}
+          yMin={2400}
+          yMax={2840}
+          mousePos={localMousePos}
+          src={Images.agif}
+          title={"One-click to task and calendar"}
+          content={
             "Quick access to your simple task management without leaving your flow"
           }
           reverse={{ hidden: "hidden" }}
@@ -122,30 +126,30 @@ const Home = () => {
       </div>
       <div className="pt-40">
         <AniArticles
-          Scrollcheck={ScrollPosition}
-          Ymin={3140}
-          Ymax={3760}
-          MousePos={LocalMousePos}
-          Src={Images.talk}
-          Src2={Images.circlebg}
-          Tittle={"Feel connected with others"}
-          Content={
+          scrollCheck={scrollPosition}
+          yMin={3140}
+          yMax={3760}
+          mousePos={localMousePos}
+          src={Images.talk}
+          src2={Images.circlebg}
+          title={"Feel connected with others"}
+          content={
             "Improve morale by experiencing digital spaces with your team or friends"
           }
-          Reverse={{ col1: "col-[1]", col2: "col-[2]", row1: "row-[1]" }}
+          reverse={{ col1: "col-[1]", col2: "col-[2]", row1: "row-[1]" }}
         />
       </div>
       <div className="pt-40 pb-40">
         <AniArticles
-          Scrollcheck={ScrollPosition}
-          Ymin={3900}
-          Ymax={4450}
-          MousePos={LocalMousePos}
-          Src={Images.time}
-          Src2={Images.circlebg}
-          Src3={Images.chart}
-          Tittle={"Track your productivity"}
-          Content={
+          scrollCheck={scrollPosition}
+          yMin={3900}
+          yMax={4450}
+          mousePos={localMousePos}
+          src={Images.time}
+          src2={Images.circlebg}
+          src3={Images.chart}
+          title={"Track your productivity"}
+          content={
             "10x your deep work flow by tracking your daily productivity time."
           }
         />

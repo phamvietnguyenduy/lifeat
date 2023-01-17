@@ -1,16 +1,10 @@
-import {
-  BrowserRouter,
- RoutesFromElements,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes >
+        <Routes>
           <Route path="/*" element={<Header />} />
         </Routes>
       </BrowserRouter>
