@@ -7,33 +7,33 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+const slideItems = [
+  {
+    id: 1,
+    name: Images.ig0,
+  },
+  {
+    id: 2,
+    name: Images.ig1,
+  },
+  {
+    id: 3,
+    name: Images.ig2,
+  },
+  {
+    id: 4,
+    name: Images.ig3,
+  },
+  {
+    id: 5,
+    name: Images.ig4,
+  },
+  {
+    id: 6,
+    name: Images.ig5,
+  },
+];
 const Slide = () => {
-  const slideitems = [
-    {
-      id: 1,
-      name: Images.ig0,
-    },
-    {
-      id: 2,
-      name: Images.ig1,
-    },
-    {
-      id: 3,
-      name: Images.ig2,
-    },
-    {
-      id: 4,
-      name: Images.ig3,
-    },
-    {
-      id: 5,
-      name: Images.ig4,
-    },
-    {
-      id: 6,
-      name: Images.ig5,
-    },
-  ];
   return (
     <div>
       <Swiper
@@ -49,9 +49,13 @@ const Slide = () => {
           disableOnInteraction: false,
         }}
       >
-        {slideitems.map(({ id, name }) => (
+        {slideItems.map(({ id, name }) => (
           <SwiperSlide key={id} className="text-center pl-7 ">
-            <img src={name} alt="" className="h-[25rem] w-[25rem] rounded-lg" />
+            <img
+              src={name}
+              alt={id}
+              className="h-[25rem] w-[25rem] rounded-lg"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

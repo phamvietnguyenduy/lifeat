@@ -3,8 +3,38 @@ import Images from "../../assets/images";
 import Articles from "./Articles";
 import AniArticles from "./AniArticles";
 import Slide from "./Slide";
-import Transformimg from "./Transformimg";
-import { Link } from "react-router-dom";
+import Transforming from "./Transforming";
+
+const listData = [
+  {
+    yMin: 2400,
+    yMax: 2840,
+    src: [Images.agif],
+    title: "One-click to task and calendar",
+    content:
+      "Quick access to your simple task management without leaving your flow",
+    reverse: { hidden: "hidden" },
+  },
+  {
+    yMin: 3140,
+    yMax: 3760,
+    src: [Images.talk, Images.circlebg],
+    title: "Feel connected with others",
+    content:
+      "Improve morale by experiencing digital spaces with your team or friends",
+    reverse: { col1: "col-[1]", col2: "col-[2]", row1: "row-[1]" },
+  },
+  {
+    yMin: 3900,
+    yMax: 4450,
+    src: [Images.time, Images.circlebg, Images.chart],
+    title: "Feel connected with others",
+    content:
+      "Improve morale by experiencing digital spaces with your team or friends",
+    reverse: { col1: "col-[1]", col2: "col-[2]", row1: "row-[1]" },
+  },
+];
+
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollCheck, setScrollCheck] = useState(false);
@@ -22,7 +52,7 @@ const Home = () => {
     setScrollPosition(position);
     scrollCheck ? setScrollCheck(false) : setScrollCheck(true);
   };
-  console.log(bannerCheck);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("mousemove", handleMouseMove);
@@ -32,10 +62,13 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="relative top-40 py-5 z-0">
-      <div className="thumb mx-auto w-1/2 h-[23rem]">
-        <div className="circle absolute rounded-[650px] opacity-[.97] blur-3xl mx-auto bg-circle-pattern w-[600px] h-[600px] backdrop-blur-sm"></div>
-        <div className="Tittile w-1/2 absolute">
+    <section aria-labelledby="articles" className="relative top-40 py-5 z-0">
+      <header
+        aria-labelledby="header-articles"
+        className="thumb mx-auto w-1/2 h-[23rem]"
+      >
+        <div className="circle absolute rounded-[650px] opacity-[.97] blur-3xl mx-auto bg-circle-pattern w-[600px] h-[600px] backdrop-blur-sm" />
+        <div className="w-1/2 absolute">
           <h2 className="font-extrabold text-thBlack text-center font-Circularstd">
             Your space to focus and get things done
           </h2>
@@ -51,7 +84,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex absolute left-[50%] top-[170%] translate-x-[-50%] ">
-            <Link className="cursor-pointer">
+            <span className="cursor-pointer">
               <div
                 className={`uppercase font-bold cursor-pointer ${
                   bannerCheck ? "" : "border-b-2 border-black"
@@ -62,8 +95,8 @@ const Home = () => {
               >
                 with lifeat
               </div>
-            </Link>
-            <Link className="ml-10 cursor-pointer">
+            </span>
+            <span className="ml-10 cursor-pointer">
               <div
                 className={`uppercase font-bold cursor-pointer ${
                   bannerCheck ? "border-b-2 border-black" : ""
@@ -74,20 +107,23 @@ const Home = () => {
               >
                 without lifeat
               </div>
-            </Link>
+            </span>
           </div>
         </div>
-      </div>
-      {bannerCheck ? (
-        <img
-          src={Images.without}
-          className="relative z-10 mx-auto"
-          alt="banner"
-        />
-      ) : (
-        <Transformimg scrollPosition={scrollPosition} />
-      )}
-      <div className="brand_ads py-40">
+      </header>
+      <section aria-labelledby="banners-main-articles">
+        {bannerCheck ? (
+          <img
+            src={Images.without}
+            className="relative z-10 mx-auto"
+            alt="banner"
+          />
+        ) : (
+          <Transforming scrollPosition={scrollPosition} />
+        )}
+      </section>
+
+      <section aria-labelledby="sponsors" className="brand_ads py-40">
         <p className="text-4xl font-bold text-thBlack text-center">
           Trusted by
         </p>
@@ -98,71 +134,47 @@ const Home = () => {
           <img src={Images.logo4} alt="" className="w-[141px] h-[80px]" />
           <img src={Images.logo5} alt="" className="w-[141px] h-[80px]" />
         </div>
-      </div>
-      <div className="py-40">
-        <p className="text-4xl font-bold text-thBlack text-center">
-          How it works
-        </p>
-        <p className="text-[20px] text-center text-gray-500 pt-7">
-          Meet the new standard for modern task management
-        </p>
-      </div>
-      <div className="pb-40">
-        <Articles Scrollcheck={scrollPosition} />
-      </div>
-      <div className="pt-40">
-        <AniArticles
-          scrollCheck={scrollPosition}
-          yMin={2400}
-          yMax={2840}
-          mousePos={localMousePos}
-          src={Images.agif}
-          title={"One-click to task and calendar"}
-          content={
-            "Quick access to your simple task management without leaving your flow"
-          }
-          reverse={{ hidden: "hidden" }}
-        />
-      </div>
-      <div className="pt-40">
-        <AniArticles
-          scrollCheck={scrollPosition}
-          yMin={3140}
-          yMax={3760}
-          mousePos={localMousePos}
-          src={Images.talk}
-          src2={Images.circlebg}
-          title={"Feel connected with others"}
-          content={
-            "Improve morale by experiencing digital spaces with your team or friends"
-          }
-          reverse={{ col1: "col-[1]", col2: "col-[2]", row1: "row-[1]" }}
-        />
-      </div>
-      <div className="pt-40 pb-40">
-        <AniArticles
-          scrollCheck={scrollPosition}
-          yMin={3900}
-          yMax={4450}
-          mousePos={localMousePos}
-          src={Images.time}
-          src2={Images.circlebg}
-          src3={Images.chart}
-          title={"Track your productivity"}
-          content={
-            "10x your deep work flow by tracking your daily productivity time."
-          }
-        />
-      </div>
-      <div className="pt-40 pb-16">
-        <p className="text-4xl font-bold text-thBlack text-center">
-          How others use LifeAt
-        </p>
-      </div>
-      <div className="pb-40">
-        <Slide />
-      </div>
-    </div>
+      </section>
+      <main aria-labelledby="main-articles">
+        <header className="py-40">
+          <p className="text-4xl font-bold text-thBlack text-center">
+            How it works
+          </p>
+          <p className="text-[20px] text-center text-gray-500 pt-7">
+            Meet the new standard for modern task management
+          </p>
+        </header>
+        <main>
+          <div className="pb-40">
+            <Articles scrollCheck={scrollPosition} />
+          </div>
+          {listData.map((data) => (
+            <>
+              <div className="pt-40">
+                <AniArticles
+                  scrollCheck={scrollPosition}
+                  yMin={data.yMin}
+                  yMax={data.yMax}
+                  mousePos={localMousePos}
+                  imgSrc={data.src}
+                  title={data.title}
+                  content={data.content}
+                  reverse={data.reverse}
+                />
+              </div>
+            </>
+          ))}
+        </main>
+        <footer className="pt-40 pb-16">
+          <p className="text-4xl font-bold text-thBlack text-center">
+            How others use LifeAt
+          </p>
+        </footer>
+        <div className="pb-40">
+          <Slide />
+        </div>
+      </main>
+    </section>
   );
 };
 

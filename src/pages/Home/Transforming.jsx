@@ -1,10 +1,11 @@
 import React from "react";
 import Images from "../../assets/images";
-const Transformimg = ({ scrollPosition }) => {
+const Transforming = ({ scrollPosition }) => {
   return (
     <div className="item flex justify-center relative z-10">
-      <img src={Images.lap} alt="" className="relative " />
+      <img loading="lazy" src={Images.lap} alt="" className="relative " />
       <img
+        loading="lazy"
         src={Images.face}
         alt=""
         className="absolute will-change-transform"
@@ -16,6 +17,7 @@ const Transformimg = ({ scrollPosition }) => {
         }}
       />
       <img
+        loading="lazy"
         src={Images.list}
         alt=""
         className="absolute will-change-transform"
@@ -30,4 +32,4 @@ const Transformimg = ({ scrollPosition }) => {
   );
 };
 
-export default Transformimg;
+export default Transforming;

@@ -1,6 +1,4 @@
 import React from "react";
-// import videoposter from "../assets/images/videoposter.mp4";
-// import Images from "../../assets/images";
 const AniArticles = ({
   scrollCheck,
   yMin,
@@ -9,10 +7,9 @@ const AniArticles = ({
   content,
   reverse,
   mousePos,
-  src,
-  src2,
-  src3,
+  imgSrc,
 }) => {
+  const [src, src2, src3] = imgSrc;
   // console.log(src);
   let Y = 0;
   let X = mousePos.x / 100;
@@ -53,29 +50,36 @@ const AniArticles = ({
       </div>
       <div className={`relative rounded-xl ${reverse?.col1} ${reverse?.row1}`}>
         <div className="gif_tag">
+          {src2 && (
+            <img
+              loading="lazy"
+              src={src2}
+              alt=""
+              className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
+              style={{
+                transform: `translate3d(${X * -1}rem,${
+                  (mousePos.y / 100) * -1
+                }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+                transformStyle: "preserve-3d",
+              }}
+            />
+          )}
+          {src3 && (
+            <img
+              loading="lazy"
+              src={src3}
+              alt=""
+              className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
+              style={{
+                transform: `translate3d(${X - 3}rem,${
+                  (mousePos.y / 100) * -1 - 3
+                }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+                transformStyle: "preserve-3d",
+              }}
+            />
+          )}
           <img
-            src={src2}
-            alt=""
-            className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
-            style={{
-              transform: `translate3d(${X * -1}rem,${
-                (mousePos.y / 100) * -1
-              }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-              transformStyle: "preserve-3d",
-            }}
-          />
-          <img
-            src={src3}
-            alt=""
-            className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
-            style={{
-              transform: `translate3d(${X - 3}rem,${
-                (mousePos.y / 100) * -1 - 3
-              }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-              transformStyle: "preserve-3d",
-            }}
-          />
-          <img
+            loading="lazy"
             src={src}
             alt=""
             className="w-[36rem] h-[39rem] will-change-transform transition duration-500"

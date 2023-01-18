@@ -6,10 +6,10 @@ import "animate.css";
 // import Images from "../../assets/images";
 import videoposter from "../../assets/images/videoposter.mp4";
 
-const Articles = ({ Scrollcheck }) => {
+const Articles = ({ scrollCheck }) => {
   let y = 0;
   let opacity = 0;
-  if (Scrollcheck > 1400 && Scrollcheck < 2000) {
+  if (scrollCheck > 1400 && scrollCheck < 2000) {
     y = 0;
     opacity = 1;
   } else {
