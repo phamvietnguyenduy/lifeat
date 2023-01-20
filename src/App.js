@@ -4,18 +4,21 @@ import BaseLayout from "./layout/BaseLayout";
 
 //Pages
 const Home = lazy(() => import("./pages/Home/Home"));
+const Explore = lazy(() => import("./pages/Explore/Explore"));
+
 function App() {
   return (
     <>
-      <BaseLayout>
-        <BrowserRouter>
+      <BrowserRouter>
+        <BaseLayout>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/*" element={<Home />} />
+              <Route path="/explore" element={<Explore />} />
             </Routes>
           </Suspense>
-        </BrowserRouter>
-      </BaseLayout>
+        </BaseLayout>
+      </BrowserRouter>
     </>
   );
 }

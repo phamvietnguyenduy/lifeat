@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const menu = [
   {
@@ -41,7 +42,7 @@ const Header = ({ checkMenu, setCheckMenu }) => {
                   key={id}
                   className="p-4 text-sm font-medium cursor-pointer text-gray-700 hover:text-thOrange duration-200"
                 >
-                  {name}
+                  <Link to={`/${name.toLowerCase()}`}>{name}</Link>
                 </li>
               ))}
             </ul>
