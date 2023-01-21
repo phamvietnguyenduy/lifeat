@@ -1,6 +1,59 @@
 import React from "react";
+//Components
 import Genres from "./Genres";
+import CollectionLayout from "./CollectionLayout";
 import Images from "../../assets/images";
+import Slide from "../../components/Slide";
+const slideItems = [
+  {
+    id: 1,
+    name: Images.ig0,
+    title: "Quá đẹp trai",
+    desc: "Đẹp trai nhất",
+  },
+  {
+    id: 2,
+    name: Images.ig1,
+    title: "Quá đẹp trai",
+    desc: "Đẹp trai nhất",
+  },
+  {
+    id: 3,
+    name: Images.ig2,
+    title: "Quá đẹp trai",
+    desc: "Đẹp trai nhất",
+  },
+  {
+    id: 4,
+    name: Images.ig3,
+    title: "Quá đẹp trai",
+    desc: "Đẹp trai nhất",
+  },
+  {
+    id: 5,
+    name: Images.ig4,
+    title: "Quá đẹp trai",
+    desc: "Đẹp trai nhất",
+  },
+  {
+    id: 6,
+    name: Images.ig5,
+    title: "Quá đẹp trai",
+    desc: "Đẹp trai nhất",
+  },
+];
+const dataSet = [
+  {
+    title: "New Spaces",
+    description: "Try out some of the new spaces we just added",
+    img: slideItems,
+  },
+  {
+    title: "Community Favs",
+    description: "Hand picked by the LifeAt community weekly.",
+    img: slideItems,
+  },
+];
 const Explore = () => {
   return (
     <>
@@ -9,48 +62,65 @@ const Explore = () => {
           <Genres />
         </div>
       </nav>
-      <section aria-label="content" className="relative top-48 mb-56 px-28">
-        <section
-          aria-label="banners"
-          className="flex flex-row justify-start items-start w-full gap-2"
-        >
-          <div className="basis-1/3">
-            <h1 className="font-semibold text-lg tracking-wide pb-3">Now</h1>
-            <img
-              className="w-full h-[22.5rem] rounded-lg"
-              src={Images.ig0}
-              alt="now_banner"
-            />
-          </div>
-          <div className="basis-2/3">
-            <h1 className="font-semibold text-lg tracking-wide pb-3">
-              Trending
-            </h1>
-            <div className="grid grid-rows-2 grid-flow-col gap-2">
+      <section
+        aria-label="content"
+        className="relative top-48 mb-56  space-y-28"
+      >
+        <main className="px-28 space-y-28">
+          <section
+            aria-label="banners"
+            className="flex flex-row justify-start items-start w-full gap-2"
+          >
+            <div className="basis-1/3">
+              <h1 className="font-semibold text-lg tracking-wide pb-3">Now</h1>
               <img
-                className="w-full h-44 rounded-lg"
-                src={Images.ig0}
-                alt="now_banner"
-              />
-              <img
-                className="w-full h-44 rounded-lg"
-                src={Images.ig0}
-                alt="now_banner"
-              />
-              <img
-                className="w-full h-44 rounded-lg"
-                src={Images.ig0}
-                alt="now_banner"
-              />
-              <img
-                className="w-full h-44 rounded-lg"
+                className="w-full h-[22.5rem] rounded-lg"
                 src={Images.ig0}
                 alt="now_banner"
               />
             </div>
-          </div>
+            <div className="basis-2/3">
+              <h1 className="font-semibold text-lg tracking-wide pb-3">
+                Trending
+              </h1>
+              <div className="grid grid-rows-2 grid-flow-col gap-2">
+                <img
+                  className="w-full h-44 rounded-lg"
+                  src={Images.ig0}
+                  alt="now_banner"
+                />
+                <img
+                  className="w-full h-44 rounded-lg"
+                  src={Images.ig0}
+                  alt="now_banner"
+                />
+                <img
+                  className="w-full h-44 rounded-lg"
+                  src={Images.ig0}
+                  alt="now_banner"
+                />
+                <img
+                  className="w-full h-44 rounded-lg"
+                  src={Images.ig0}
+                  alt="now_banner"
+                />
+              </div>
+            </div>
+          </section>
+          <section className="space-y-28">
+            {dataSet.map((data, index) => (
+              <CollectionLayout
+                key={index}
+                title={data.title}
+                description={data.description}
+                imgData={data.img}
+              />
+            ))}
+          </section>
+        </main>
+        <section className="pb-40">
+          <Slide />
         </section>
-        <section>Test content</section>
       </section>
     </>
   );
