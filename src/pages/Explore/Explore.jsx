@@ -66,13 +66,15 @@ const Explore = () => {
         aria-label="content"
         className="relative top-48 mb-56  space-y-28"
       >
-        <main className="px-28 space-y-28">
+        <main className="lg:px-28 px-5 lg:space-y-28 space-y-8">
           <section
             aria-label="banners"
-            className="flex flex-row justify-start items-start w-full gap-2"
+            className="lg:flex lg:flex-row lg:justify-start lg:items-start w-full gap-2 lg:space-y-0 space-y-8"
           >
             <div className="basis-1/3">
-              <h1 className="font-semibold text-lg tracking-wide pb-3">Now</h1>
+              <h1 className="font-semibold text-lg lg:tracking-wide tracking-tight pb-3 lg:text-left text-center">
+                Now
+              </h1>
               <img
                 className="w-full h-[22.5rem] rounded-lg"
                 src={Images.ig0}
@@ -80,7 +82,7 @@ const Explore = () => {
               />
             </div>
             <div className="basis-2/3">
-              <h1 className="font-semibold text-lg tracking-wide pb-3">
+              <h1 className="font-semibold lg:text-left text-center lg:tracking-wide tracking-tight pb-3">
                 Trending
               </h1>
               <div className="grid grid-rows-2 grid-flow-col gap-2">

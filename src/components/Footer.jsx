@@ -4,12 +4,12 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <div>
-      <div className="px-20">
+      <div className="lg:px-20 px-5">
         <div className="flex justify-between items-start border-b-[1px] border-gray-400 py-9">
-          <h1 className="text-black font-medium tracking-widest text-4xl">
+          <h1 className="text-black font-medium  tracking-widest lg:text-4xl text-2xl">
             LifeAt
           </h1>
-          <div className="logo flex justify-around w-[15%] items-start">
+          <div className="logo flex justify-around lg:w-[15%] w-[50%] gap-5 items-start">
             <FaDiscord
               size={33}
               className="bg-black text-white p-1 rounded-md hover:bg-gray-600"
@@ -28,7 +28,7 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="pt-12 grid grid-cols-4 gap-x-18">
+        <div className="pt-12 grid lg:grid-cols-4 lg:gap-x-18 grid-cols-2 gap-x-3 gap-y-9">
           <div>
             <p className="font-extrabold pb-2 text-base">Product</p>
             <p className="text-base font-semibold text-gray-600 pt-3 hover:text-thBrick">

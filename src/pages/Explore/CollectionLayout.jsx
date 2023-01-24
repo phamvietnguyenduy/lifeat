@@ -11,17 +11,27 @@ import "swiper/css/lazy";
 const CollectionLayout = ({ title, description, imgData }) => {
   return (
     <div className="space-y-4">
-      <h1 className="font-bold text-gray-700 text-3xl tracking-wide">
+      <h1 className="font-bold text-gray-700 text-3xl lg:tracking-wide tracking-tight">
         {title}
       </h1>
       <h2 className="text-black font-normal text-base">{description}</h2>
       <section>
         <Swiper
           // install Swiper modules
-          slidesPerView={4}
+
+          breakpoints={{
+            300: {
+              // width: 576,
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+            768: {
+              // width: 768,
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+            },
+          }}
           spaceBetween={30}
-          slidesPerGroup={4}
-          loop={true}
           lazy={true}
           loopFillGroupWithBlank={true}
           pagination={{

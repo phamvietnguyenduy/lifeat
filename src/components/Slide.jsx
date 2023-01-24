@@ -41,9 +41,19 @@ const Slide = () => {
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={3}
-        slidesPerView={4}
+        breakpoints={{
+          300: {
+            // width: 576,
+            slidesPerView: 2,
+          },
+          768: {
+            // width: 768,
+            slidesPerView: 4,
+          },
+        }}
         speed={10000}
         loop={true}
+        loopFillGroupWithBlank={true}
         autoplay={{
           delay: 1,
           disableOnInteraction: false,
@@ -54,7 +64,7 @@ const Slide = () => {
             <img
               src={name}
               alt={id}
-              className="h-[25rem] w-[25rem] rounded-lg"
+              className="lg:h-[25rem] lg:w-[25rem] w-full h-[30rem]  rounded-lg"
             />
           </SwiperSlide>
         ))}
