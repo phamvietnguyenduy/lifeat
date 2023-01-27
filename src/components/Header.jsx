@@ -13,7 +13,7 @@ const menu = [
   },
   {
     id: 3,
-    name: "Pricing",
+    name: "Help",
   },
   {
     id: 4,
