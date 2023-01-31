@@ -7,7 +7,8 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-const Slide = () => {
+const Slide = ({ width }) => {
+  let item;
   const slideitems = [
     {
       id: 1,
@@ -34,6 +35,9 @@ const Slide = () => {
       name: Images.ig5,
     },
   ];
+  if (width < 400) {
+    item = 1;
+  } else item = 4;
   return (
     <div>
       <Swiper
@@ -41,7 +45,7 @@ const Slide = () => {
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={3}
-        slidesPerView={4}
+        slidesPerView={item}
         speed={10000}
         loop={true}
         autoplay={{

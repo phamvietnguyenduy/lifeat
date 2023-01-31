@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./Footer";
@@ -22,7 +22,8 @@ const menu = [
     name: "Careers",
   },
 ];
-const Header = ({ checkMenu, setCheckMenu }) => {
+const Header = ({}) => {
+  const [checkMenu, setcheckMenu] = useState(false);
   return (
     <div>
       <div className="fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10">
@@ -34,7 +35,7 @@ const Header = ({ checkMenu, setCheckMenu }) => {
             <input
               type="text"
               placeholder="Search a space"
-              className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-thBlack rounded-2xl w-[46%]"
+              className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-thBlack rounded-2xl w-[46%] hidden lg:block"
             />
           </div>
           <div className="hidden lg:flex items-center">
@@ -53,7 +54,7 @@ const Header = ({ checkMenu, setCheckMenu }) => {
             </div>
           </div>
           <div
-            onClick={() => setCheckMenu(!checkMenu)}
+            onClick={() => setcheckMenu(!checkMenu)}
             className="block lg:hidden text-gray-700"
           >
             {checkMenu ? <FaTimes size={30} /> : <FaBars size={30} />}
@@ -64,17 +65,20 @@ const Header = ({ checkMenu, setCheckMenu }) => {
       <div
         className={` ${
           checkMenu ? "top-20 rounded-2xl opacity-95" : "top-[-100%]"
-        }  w-full bg-black text-gray-700 absolute z-10 left-0 h-fit lg:hidden py-12 flex justify-center text-center duration-500 `}
+        }  w-full bg-[#f8f8f8] text-gray-700 absolute z-10 left-0 h-fit lg:hidden py-12 flex justify-center text-center duration-500 `}
       >
         <ul>
           {menu.map(({ id, name }) => (
             <li
               key={id}
-              className="p-4 uppercase cursor-pointer hover:text-thBlue duration-200"
+              className="p-4 text-sm font-medium cursor-pointer uppercase hover:text-thBlue duration-200"
             >
               {name}
             </li>
           ))}
+          <div className="py-3 px-8 bg-black text-white rounded-[10rem] text-sm font-medium cursor-pointer">
+            Go to app
+          </div>
         </ul>
       </div>
       {/* routing */}
