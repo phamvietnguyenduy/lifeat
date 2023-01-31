@@ -16,7 +16,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/explore" element={<Explore />} />
-              <Route path="/help" element={<Help />} />
+              <Route path="/help/*" element={<Help />} />
             </Routes>
           </BaseLayout>
         </Suspense>
