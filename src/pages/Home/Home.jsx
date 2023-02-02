@@ -163,6 +163,8 @@ const Home = () => {
               scrollCheck={scrollPosition}
               yMin={data.yMin}
               yMax={data.yMax}
+              ymblMin={data.ymblMin}
+              ymblMax={data.ymblMax}
               mousePos={localMousePos}
               imgSrc={data.src}
               title={data.title}
