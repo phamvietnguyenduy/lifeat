@@ -10,6 +10,8 @@ const listData = [
   {
     yMin: 2400,
     yMax: 2840,
+    ymblMin: 900,
+    ymblMax: 1200,
     src: [Images.agif],
     title: "One-click to task and calendar",
     content:
@@ -19,6 +21,8 @@ const listData = [
   {
     yMin: 3140,
     yMax: 3760,
+    ymblMin: 1200,
+    ymblMax: 2400,
     src: [Images.talk, Images.circlebg],
     title: "Feel connected with others",
     content:
@@ -28,6 +32,8 @@ const listData = [
   {
     yMin: 3900,
     yMax: 4450,
+    ymblMin: 2400,
+    ymblMax: 2900,
     src: [Images.time, Images.circlebg, Images.chart],
     title: "Feel connected with others",
     content:
@@ -150,59 +156,23 @@ const Home = () => {
       <div className="lg:pb-40">
         <Articles Scrollcheck={scrollPosition} width={width} />
       </div>
-      <div className="lg:pt-40">
-        <AniArticles
-          scrollCheck={scrollPosition}
-          yMin={2400}
-          yMax={2840}
-          ymblMin={900}
-          ymblMax={1200}
-          width={width}
-          mousePos={localMousePos}
-          src={Images.agif}
-          title={"One-click to task and calendar"}
-          content={
-            "Quick access to your simple task management without leaving your flow"
-          }
-          reverse={{ hidden: "hidden" }}
-        />
-      </div>
-      <div className="lg:pt-40">
-        <AniArticles
-          scrollCheck={scrollPosition}
-          yMin={3140}
-          yMax={3760}
-          ymblMin={1200}
-          ymblMax={2400}
-          width={width}
-          mousePos={localMousePos}
-          src={Images.talk}
-          src2={Images.circlebg}
-          title={"Feel connected with others"}
-          content={
-            "Improve morale by experiencing digital spaces with your team or friends"
-          }
-          reverse={{ col1: "lg:col-[1]", col2: "col-[2]", row1: "lg:row-[1]" }}
-        />
-      </div>
-      <div className="lg:pt-40 lg:pb-40">
-        <AniArticles
-          scrollCheck={scrollPosition}
-          yMin={3900}
-          yMax={4450}
-          ymblMin={2400}
-          ymblMax={2900}
-          width={width}
-          mousePos={localMousePos}
-          src={Images.time}
-          src2={Images.circlebg}
-          src3={Images.chart}
-          title={"Track your productivity"}
-          content={
-            "10x your deep work flow by tracking your daily productivity time."
-          }
-        />
-      </div>
+      {listData.map((data) => (
+        <>
+          <div className="pt-40">
+            <AniArticles
+              scrollCheck={scrollPosition}
+              yMin={data.yMin}
+              yMax={data.yMax}
+              mousePos={localMousePos}
+              imgSrc={data.src}
+              title={data.title}
+              content={data.content}
+              reverse={data.reverse}
+              width={width}
+            />
+          </div>
+        </>
+      ))}
       <div className="pt-40 pb-16">
         <p className="text-3xl lg:text-4xl font-bold text-thBlack text-center">
           How others use LifeAt
