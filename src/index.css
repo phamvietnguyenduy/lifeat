@@ -20,3 +20,9 @@
 .swiper-slide {
   width: fit-content;
 }
+/* @media (max-width: 767px) {
+  body {
+    width: 390px;
+    overflow-x: hidden;
+  }
+} */
