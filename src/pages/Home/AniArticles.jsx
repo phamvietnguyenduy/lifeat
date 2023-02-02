@@ -12,7 +12,7 @@ const AniArticles = ({
   imgSrc,
 }) => {
   const [src, src2, src3] = imgSrc;
-  console.log(imgSrc);
+  // console.log(imgSrc);
   let Y = 0;
   let X = mousePos.x / 100;
   let Opacity = 0;
@@ -58,7 +58,28 @@ const AniArticles = ({
       <div className={`relative rounded-xl ${reverse?.col1} ${reverse?.row1}`}>
         <div className="gif_tag w-[320px] lg:w-full ">
           <img
-            loading="lazy"
+            src={src2}
+            alt=""
+            className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
+            style={{
+              transform: `translate3d(${X * -1}rem,${
+                (mousePos.y / 100) * -1
+              }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+              transformStyle: "preserve-3d",
+            }}
+          />
+          <img
+            src={src3}
+            alt=""
+            className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
+            style={{
+              transform: `translate3d(${X - 3}rem,${
+                (mousePos.y / 100) * -1 - 3
+              }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+              transformStyle: "preserve-3d",
+            }}
+          />
+          <img
             src={src}
             alt=""
             className="w-[36rem] lg:h-[39rem] will-change-transform transition duration-500"
