@@ -158,7 +158,7 @@ const Home = () => {
       </div>
       {listData.map((data) => (
         <>
-          <div className="pt-40">
+          <div className="lg:pt-40">
             <AniArticles
               scrollCheck={scrollPosition}
               yMin={data.yMin}
