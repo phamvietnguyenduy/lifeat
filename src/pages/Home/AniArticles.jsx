@@ -11,7 +11,7 @@ const AniArticles = ({
   mousePos,
   imgSrc,
 }) => {
-  const [src, src1, src2] = imgSrc;
+  const [src, src2, src3] = imgSrc;
   // console.log(imgSrc);
   let Y = 0;
   let X = mousePos.x / 100;
@@ -58,7 +58,7 @@ const AniArticles = ({
       <div className={`relative rounded-xl ${reverse?.col1} ${reverse?.row1}`}>
         <div className="gif_tag w-[320px] lg:w-full ">
           <img
-            src={src1}
+            src={src2}
             alt=""
             className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
             style={{
@@ -69,7 +69,7 @@ const AniArticles = ({
             }}
           />
           <img
-            src={src2}
+            src={src3}
             alt=""
             className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
             style={{
