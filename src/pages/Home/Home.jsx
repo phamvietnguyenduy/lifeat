@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Images from "../../assets/images";
 import Articles from "./Articles";
 import AniArticles from "./AniArticles";
@@ -124,7 +125,7 @@ const Home = () => {
           alt="banner"
         />
       ) : (
-        <Transformimg scrollPosition={scrollPosition} />
+        <Transforming scrollPosition={scrollPosition} />
       )}
       <div className="brand_ads py-40 hidden lg:block">
         <p className="text-4xl font-bold text-thBlack text-center">

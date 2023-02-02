@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 // import Images from "../../assets/images";
 import videoposter from "../../assets/images/videoposter.mp4";
 
-const Articles = ({ scrollCheck }) => {
+const Articles = ({ scrollCheck, width, css }) => {
   let y = 0;
   let opacity = 0;
   if (scrollCheck > 1400 && scrollCheck < 2000) {

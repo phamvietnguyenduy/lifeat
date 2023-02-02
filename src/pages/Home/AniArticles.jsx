@@ -12,7 +12,7 @@ const AniArticles = ({
   imgSrc,
 }) => {
   const [src, src2, src3] = imgSrc;
-  // console.log(src);
+  console.log(imgSrc);
   let Y = 0;
   let X = mousePos.x / 100;
   let Opacity = 0;

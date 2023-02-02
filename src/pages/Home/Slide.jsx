@@ -9,7 +9,7 @@ import "swiper/css/autoplay";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 const Slide = ({ width }) => {
   let item;
-  const slideitems = [
+  const slideItems = [
     {
       id: 1,
       name: Images.ig0,
