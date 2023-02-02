@@ -20,5 +20,12 @@ const Images = {
   ig4: require("./ig5.jpeg"),
   ig5: require("./ig6.jpeg"),
   without: require("./without.png"),
+  aquarium: require("./aquarium.jpeg"),
+  cody: require("./cody.jpeg"),
+  Hongkong: require("./Hongkong.jpeg"),
+  japanstreet: require("./japanstreet.jpeg"),
+  lofi: require("./lofi.jpeg"),
+  shanghai: require("./shanghai.jpeg"),
+  train: require("./train.jpeg"),
 };
 export default Images;
