@@ -11,7 +11,7 @@ const AniArticles = ({
   mousePos,
   imgSrc,
 }) => {
-  const [src, src2, src3] = imgSrc;
+  // const [src, src2, src3] = imgSrc;
   // console.log(imgSrc);
   let Y = 0;
   let X = mousePos.x / 100;
@@ -58,9 +58,9 @@ const AniArticles = ({
       <div className={`relative rounded-xl ${reverse?.col1} ${reverse?.row1}`}>
         <div className="gif_tag w-[320px] lg:w-full ">
           <img
-            src={src2}
+            src={imgSrc[1]}
             alt=""
-            className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
+            className={`absolute min-w-[21rem] will-change-transform transition duration-500 ${reverse?.hidden}`}
             style={{
               transform: `translate3d(${X * -1}rem,${
                 (mousePos.y / 100) * -1
@@ -69,9 +69,9 @@ const AniArticles = ({
             }}
           />
           <img
-            src={src3}
+            src={imgSrc[2]}
             alt=""
-            className={`absolute will-change-transform transition duration-500 ${reverse?.hidden}`}
+            className={`absolute min-w-[21rem] will-change-transform transition duration-500 ${reverse?.hidden}`}
             style={{
               transform: `translate3d(${X - 3}rem,${
                 (mousePos.y / 100) * -1 - 3
@@ -80,7 +80,7 @@ const AniArticles = ({
             }}
           />
           <img
-            src={src}
+            src={imgSrc[0]}
             alt=""
             className="w-[36rem] lg:h-[39rem] will-change-transform transition duration-500"
             style={{
