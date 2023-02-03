@@ -2,5 +2,5 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "html.format.templating": true
+  "discord.enabled": true
 }

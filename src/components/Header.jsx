@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import ListSpace from "../pages/Home/ListSpace";
@@ -17,7 +18,7 @@ const menu = [
   },
   {
     id: 3,
-    name: "Pricing",
+    name: "Help",
   },
   {
     id: 4,
@@ -49,7 +50,7 @@ const Header = ({}) => {
                   key={id}
                   className="p-4 text-sm font-medium cursor-pointer text-gray-700 hover:text-thOrange duration-200"
                 >
-                  {name}
+                  <Link to={`/${name.toLowerCase()}`}>{name}</Link>
                 </li>
               ))}
             </ul>
