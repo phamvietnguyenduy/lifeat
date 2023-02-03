@@ -1,8 +1,6 @@
 import React, { lazy, Suspense, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-import { Link } from "react-router-dom";
 import ListSpace from "../pages/Home/ListSpace";
 import Footer from "./Footer";
 //Pages
@@ -39,7 +37,7 @@ const Header = ({}) => {
               <input
                 type="text"
                 placeholder="Search a space"
-                className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-thBlack rounded-2xl w-[46%] hidden lg:block"
+                className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-thBlack rounded-2xl "
               />
             </Link>
           </div>

@@ -1,13 +1,12 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BaseLayout from "./layout/BaseLayout";
-import ListSpace from "./pages/Home/ListSpace";
 
 //Pages
 const Home = lazy(() => import("./pages/Home/Home"));
 const Explore = lazy(() => import("./pages/Explore/Explore"));
 const Help = lazy(() => import("./pages/Help/Help"));
-
+const ListSpace = lazy(() => import("./pages/Home/ListSpace"));
 function App() {
   return (
     <>
@@ -16,6 +15,7 @@ function App() {
           <BaseLayout>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/space" element={<ListSpace />} />
               <Route path="/explore" element={<Explore />} />
               <Route path="/help/*" element={<Help />} />
             </Routes>

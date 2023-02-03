@@ -27,5 +27,8 @@ const Images = {
   lofi: require("./lofi.jpeg"),
   shanghai: require("./shanghai.jpeg"),
   train: require("./train.jpeg"),
+  bluesky: require("./bluesky.jpeg"),
+  cozyroom: require("./cozyroom.jpeg"),
+  fuji: require("./fuji.jpeg"),
 };
 export default Images;
