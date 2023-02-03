@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Images from "../../assets/images";
 import Articles from "./Articles";
 import AniArticles from "./AniArticles";
-import Slide from "./Slide";
+import Slide from "../../components/Slide";
 import Transforming from "./Transforming";
 
 const listData = [

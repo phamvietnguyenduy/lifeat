@@ -1,5 +1,5 @@
 import React from "react";
-import Images from "../../assets/images";
+import Images from "../assets/images";
 //import swiper lib
 import { Swiper, SwiperSlide } from "swiper/react";
 //import swiper css
@@ -48,6 +48,7 @@ const Slide = ({ width }) => {
         slidesPerView={item}
         speed={10000}
         loop={true}
+        loopFillGroupWithBlank={true}
         autoplay={{
           delay: 1,
           disableOnInteraction: false,
@@ -58,7 +59,7 @@ const Slide = ({ width }) => {
             <img
               src={name}
               alt={id}
-              className="h-[25rem] w-[25rem] rounded-lg"
+              className="lg:h-[25rem] lg:w-[25rem] w-full h-[30rem]  rounded-lg"
             />
           </SwiperSlide>
         ))}
