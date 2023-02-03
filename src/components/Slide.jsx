@@ -8,7 +8,6 @@ import "swiper/css/autoplay";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 const Slide = ({ width }) => {
-  let item;
   const slideItems = [
     {
       id: 1,
@@ -35,9 +34,7 @@ const Slide = ({ width }) => {
       name: Images.ig5,
     },
   ];
-  if (width < 400) {
-    item = 1;
-  } else item = 4;
+
   return (
     <div>
       <Swiper
