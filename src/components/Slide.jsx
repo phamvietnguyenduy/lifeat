@@ -45,7 +45,16 @@ const Slide = ({ width }) => {
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={3}
-        slidesPerView={item}
+        breakpoints={{
+          300: {
+            // width: 576,
+            slidesPerView: 2,
+          },
+          768: {
+            // width: 768,
+            slidesPerView: 4,
+          },
+        }}
         speed={10000}
         loop={true}
         loopFillGroupWithBlank={true}
