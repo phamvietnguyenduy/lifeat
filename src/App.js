@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import BaseLayout from "./layout/BaseLayout";
 
 //Pages
@@ -8,15 +8,22 @@ const Explore = lazy(() => import("./pages/Explore/Explore"));
 const Help = lazy(() => import("./pages/Help/Help"));
 const ListSpace = lazy(() => import("./pages/Home/ListSpace"));
 function App() {
+  // const { pathname } = useLocation();
+  // console.log(pathname);
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/abc" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
       <BrowserRouter>
         <Suspense fallback={<div>Loading...</div>}>
           <BaseLayout>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route exact path="/" element={<Home />} />
               <Route path="/space" element={<ListSpace />} />
-              <Route path="/explore" element={<Explore />} />
+              <Route exact path="/explore" element={<Explore />} />
               <Route path="/help/*" element={<Help />} />
             </Routes>
           </BaseLayout>
