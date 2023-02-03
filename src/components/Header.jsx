@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ListSpace from "../pages/Home/ListSpace";
 import Footer from "./Footer";
 //Pages

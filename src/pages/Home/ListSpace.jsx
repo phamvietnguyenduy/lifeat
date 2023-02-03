@@ -46,7 +46,7 @@ const ListSpace = () => {
     },
   ];
   return (
-    <div className="relative top-40">
+    <div className="pt-40 ">
       <div className="pl-6">
         {Spaces.map(({ SpaceName, author, imgtag, id }) => (
           <div key={id} className="flex mb-6">
