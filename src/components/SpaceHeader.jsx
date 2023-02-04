@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { lazy, useState, useEffect, useRef } from "react";
+import ListSpace from "../pages/Home/ListSpace";
 import { Link, useLocation } from "react-router-dom";
-import Images from "../../assets/images";
-const ListSpace = ({ Space_filter }) => {
+import Images from "../assets/images";
+const SpaceHeader = () => {
+  const [Search, setSearch] = useState("");
+  const TypingTimeout = useRef(null);
+  const [StateItem, setStateItem] = useState(false);
   const Spaces = [
     {
       SpaceName: "The Georgia Aquarium",
@@ -124,41 +128,49 @@ const ListSpace = ({ Space_filter }) => {
       id: 10,
     },
   ];
+  //onchange search filter
+  const handle_searchchange = (e) => {
+    const value_search = e.target.value;
+    //debounce technique
+    if (TypingTimeout.current) {
+      clearTimeout(TypingTimeout.current);
+    }
+    TypingTimeout.current = setTimeout(() => {
+      setSearch(value_search);
+      if (StateItem === true) {
+        setStateItem(false);
+      } else setStateItem(true);
+    }, 500);
+  };
+  const Space_filter = Spaces.filter((Space) =>
+    Space.SpaceName.toLowerCase().includes(Search.toLowerCase())
+  );
   console.log(Space_filter);
   return (
-    <div className="pt-32">
-      <div className="lg:px-20 px-5">
-        {Space_filter.map(({ SpaceName, author, imgtag, id }) => (
-          <div key={id} className="flex mb-6">
-            <div className="w-fit "> {imgtag}</div>
-            <div className="ml-5 leading-5">
-              <p className="text-lg lg:text-xl font-medium lg:font-semibold w-52 lg:w-56 lg:mt-3">
-                {SpaceName}
-              </p>
-              <span className="text-gray-500 lg:text-base lg:font-medium">
-                {author}
-              </span>
-            </div>
+    <div>
+      <div
+        className={`fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10 `}
+      >
+        <div className="flex flex-row justify-between items-center mx-auto px-6 h-full">
+          <div className="flex w-1/2 items-center ">
+            <h1 className="text-gray-700 font-medium tracking-widest text-2xl">
+              LifeAt
+            </h1>
+            <Link to="/space">
+              <input
+                type="text"
+                placeholder="Try-Pet,Haiwai,..."
+                onChange={handle_searchchange}
+                className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-white rounded-2xl bg-gray-300 flex-1"
+              />
+            </Link>
           </div>
-        ))}
+        </div>
       </div>
-      <div className="bg-white pt-10 pb-16 px-14 rounded-2xl shadow-lg w-[24.875rem] h-[19.75rem] fixed top-40 right-0 mr-14 hidden lg:block">
-        <h1 className="text-2xl font-bold mt-5 mb-2 max-w-[14rem]">
-          Can't find what you are looking for?
-        </h1>
-        <p className="text-sm text-thBlack font-medium max-w-[14rem]">
-          Submit your own content for a chance to be featured on LifeAt.
-        </p>
-        <Link>
-          <div className="flex bg-[#455bff] items-center justify-center py-3 rounded-2xl mt-4 ">
-            <p className=" text-white text-center text-sm font-medium ">
-              Showcase
-            </p>
-          </div>
-        </Link>
-      </div>
+
+      <ListSpace Space_filter={Space_filter} />
     </div>
   );
 };
 
-export default ListSpace;
+export default SpaceHeader;

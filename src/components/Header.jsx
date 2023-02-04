@@ -1,33 +1,51 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, {
+  lazy,
+  Suspense,
+  useState,
+  useEffect,
+  useRef,
+  useNavigate,
+} from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ListSpace from "../pages/Home/ListSpace";
+import Images from "../assets/images";
 import Footer from "./Footer";
 //Pages
 const Home = lazy(() => import("../pages/Home/Home"));
-const menu = [
-  {
-    id: 1,
-    name: "Explore",
-  },
-  {
-    id: 2,
-    name: "Usecases",
-  },
-  {
-    id: 3,
-    name: "Help",
-  },
-  {
-    id: 4,
-    name: "Careers",
-  },
-];
 const Header = ({}) => {
   const [checkMenu, setcheckMenu] = useState(false);
+  const [Search, setSearch] = useState("");
+  const TypingTimeout = useRef(null);
+  const [StateItem, setStateItem] = useState(false);
+  const menu = [
+    {
+      id: 1,
+      name: "Explore",
+    },
+    {
+      id: 2,
+      name: "Usecases",
+    },
+    {
+      id: 3,
+      name: "Help",
+    },
+    {
+      id: 4,
+      name: "Careers",
+    },
+  ];
+
+  const { pathname } = useLocation();
+
   return (
     <div>
-      <div className="fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10">
+      <div
+        className={`fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10 ${
+          pathname === "/space" ? "hidden" : "block"
+        } `}
+      >
         <div className="flex flex-row justify-between items-center mx-auto px-6 h-full">
           <div className="flex w-1/2 items-center ">
             <h1 className="text-gray-700 font-medium tracking-widest text-2xl">

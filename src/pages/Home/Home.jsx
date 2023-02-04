@@ -60,7 +60,7 @@ const Home = () => {
     setScrollPosition(position);
     scrollCheck ? setScrollCheck(false) : setScrollCheck(true);
   };
-  console.log(scrollPosition);
+  // console.log(scrollPosition);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("mousemove", handleMouseMove);
