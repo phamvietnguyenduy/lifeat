@@ -15,20 +15,20 @@ const navData = [
     title: "Help Center",
 
     items: [
-      { title: "Getting Starts", dest: "introduction" },
+      { title: "Getting Starts", dest: "" },
       { title: "Pro FAQ", dest: "faq" },
     ],
   },
-  {
-    id: 2,
-    title: "Help Center",
-    dest: "help-center",
+  // {
+  //   id: 2,
+  //   title: "Help Center",
+  //   dest: "help-center",
 
-    items: [
-      { title: "Getting Starts", dest: "introduction" },
-      { title: "Pro FAQ", dest: "faq" },
-    ],
-  },
+  //   items: [
+  //     { title: "Getting Starts", dest: "" },
+  //     { title: "Pro FAQ", dest: "faq" },
+  //   ],
+  // },
 ];
 
 const Help = () => {
@@ -40,13 +40,13 @@ const Help = () => {
       component: "",
     };
     switch (params) {
-      case "/help/introduction":
+      case "/help":
         section.component = <Introduction />;
         section.title = "Introduction";
         section.quote = "Need help?";
         return section;
       case "/help/faq":
-        section.component = <Introduction />;
+        section.component = <FAQ />;
         section.title = "FAQ";
         section.quote = "Where you know all your answers";
         return section;
@@ -60,20 +60,22 @@ const Help = () => {
   };
   let contentSection = render(pathname);
   return (
-    <main className="lg:flex lg:flex-row flex flex-col-reverse h-full justify-start relative w-full text-gray-700 top-20 mb-28">
-      <nav className="lg:gap-2 lg:basis-1/6 w-full flex flex-col  bg-white px-6 pt-4">
-        <Navigation data={navData} />
-      </nav>
-      <section className="bg-white lg:basis-4/6 block w-full lg:px-48 py-20 px-6">
-        <ContentLayout
-          title={contentSection.title}
-          quote={contentSection.quote}
-        >
-          {contentSection.component}
-        </ContentLayout>
-      </section>
-      <section className="lg:inline hidden bg-white basis-1/6 px-6"></section>
-    </main>
+    <>
+      <main className="lg:flex lg:flex-row flex flex-col-reverse h-full justify-start relative w-full text-gray-700 top-20 mb-28">
+        <nav className="lg:gap-2 lg:basis-1/6 w-full flex flex-col  bg-white px-6 pt-4">
+          <Navigation data={navData} />
+        </nav>
+        <section className="bg-white lg:basis-4/6 block w-full lg:px-48 py-20 px-6">
+          <ContentLayout
+            title={contentSection.title}
+            quote={contentSection.quote}
+          >
+            {contentSection.component}
+          </ContentLayout>
+        </section>
+        <section className="lg:inline hidden bg-white basis-1/6 px-6"></section>
+      </main>
+    </>
   );
 };
 

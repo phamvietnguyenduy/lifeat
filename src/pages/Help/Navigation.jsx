@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, useHref } from "react-router-dom";
+import { NavLink, useHref } from "react-router-dom";
 
 const Navigation = ({ data }) => {
   const currentPath = useHref();
-  const path = currentPath.split("/")[2];
-  console.log(path);
+  const path =
+    currentPath.split("/")[2] === undefined ? "" : currentPath.split("/")[2];
+
   return (
     <>
       {data.map((sec) => (
@@ -18,9 +19,9 @@ const Navigation = ({ data }) => {
                 }hover:bg-gray-300 px-1 py-2.5 `}
                 key={index}
               >
-                <Link className="font-semibold" to={element.dest}>
+                <NavLink className="font-semibold" to={element.dest}>
                   {element.title}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -1,23 +1,10 @@
-import React, {
-  lazy,
-  Suspense,
-  useState,
-  useEffect,
-  useRef,
-  useNavigate,
-} from "react";
+import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import ListSpace from "../pages/Home/ListSpace";
-import Images from "../assets/images";
-import Footer from "./Footer";
-//Pages
-const Home = lazy(() => import("../pages/Home/Home"));
-const Header = ({}) => {
+
+const Header = () => {
   const [checkMenu, setcheckMenu] = useState(false);
-  const [Search, setSearch] = useState("");
-  const TypingTimeout = useRef(null);
-  const [StateItem, setStateItem] = useState(false);
+
   const menu = [
     {
       id: 1,
@@ -43,7 +30,9 @@ const Header = ({}) => {
     <div>
       <div
         className={`fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10 ${
-          pathname === "/space" ? "hidden" : "block"
+          (pathname === "/space") | pathname.includes("/help")
+            ? "hidden"
+            : "block"
         } `}
       >
         <div className="flex flex-row justify-between items-center mx-auto px-6 h-full">

@@ -1,12 +1,8 @@
 import { lazy, Suspense } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BaseLayout from "./layout/BaseLayout";
+import HelpHeader from "./components/HelpHeader";
+import Details from "./pages/Help/Details";
 
 //Pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -14,12 +10,11 @@ const Explore = lazy(() => import("./pages/Explore/Explore"));
 const Help = lazy(() => import("./pages/Help/Help"));
 const SpaceHeader = lazy(() => import("./components/SpaceHeader"));
 function App() {
-  // // const { pathname } = useLocation();
-  // // console.log(pathname);
-  // const params = useParams();
-  // console.log(params);
+  const url = window.location.href;
+
   return (
     <>
+      {url.includes("/help") && <HelpHeader />}
       <BrowserRouter>
         <Suspense fallback={<div>Loading...</div>}>
           <BaseLayout>
@@ -27,7 +22,9 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/space" element={<SpaceHeader />} />
               <Route exact path="/explore" element={<Explore />} />
-              <Route path="/help/*" element={<Help />} />
+
+              <Route exact path="/help/*" element={<Help />} />
+              <Route exact path="/help/introduction/*" element={<Details />} />
             </Routes>
           </BaseLayout>
         </Suspense>
