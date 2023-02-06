@@ -142,8 +142,10 @@ const SpaceHeader = () => {
       } else setStateItem(true);
     }, 500);
   };
+  // .SpaceName.toLowerCase().includes(Search.toLowerCase())
+  const Keys = ["SpaceName", "author"];
   const Space_filter = Spaces.filter((Space) =>
-    Space.SpaceName.toLowerCase().includes(Search.toLowerCase())
+    Keys.some((key) => Space[key].toLowerCase().includes(Search.toLowerCase()))
   );
   console.log(Space_filter);
   return (
@@ -151,20 +153,18 @@ const SpaceHeader = () => {
       <div
         className={`fixed w-full bg-[#f8f8f8] h-20 text-gray-700 z-30 mb-10 `}
       >
-        <div className="flex flex-row justify-between items-center mx-auto px-6 h-full">
-          <div className="flex w-1/2 items-center ">
-            <h1 className="text-gray-700 font-medium tracking-widest text-2xl">
-              LifeAt
-            </h1>
-            <Link to="/space">
-              <input
-                type="text"
-                placeholder="Try-Pet,Haiwai,..."
-                onChange={handle_searchchange}
-                className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-white rounded-2xl bg-gray-300 flex-1"
-              />
-            </Link>
-          </div>
+        <div className="flex items-center mx-auto px-6 h-full">
+          <h1 className="text-gray-700 font-medium tracking-widest text-2xl">
+            LifeAt
+          </h1>
+          <Link to="/space">
+            <input
+              type="text"
+              placeholder="Try-Pet,Haiwai,..."
+              onChange={handle_searchchange}
+              className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-white rounded-2xl bg-gray-300 lg:w-[52rem] font-semibold"
+            />
+          </Link>
         </div>
       </div>
 
