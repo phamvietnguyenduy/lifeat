@@ -142,8 +142,10 @@ const SpaceHeader = () => {
       } else setStateItem(true);
     }, 500);
   };
+  // .SpaceName.toLowerCase().includes(Search.toLowerCase())
+  const Keys = ["SpaceName", "author"];
   const Space_filter = Spaces.filter((Space) =>
-    Space.SpaceName.toLowerCase().includes(Search.toLowerCase())
+    Keys.some((key) => Space[key].toLowerCase().includes(Search.toLowerCase()))
   );
   console.log(Space_filter);
   return (
@@ -160,7 +162,7 @@ const SpaceHeader = () => {
               type="text"
               placeholder="Try-Pet,Haiwai,..."
               onChange={handle_searchchange}
-              className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-white rounded-2xl bg-gray-300 "
+              className="pl-3 pr-24 py-3 ml-3 focus:outline-none text-sm text-white rounded-2xl bg-gray-300 lg:w-[52rem] font-semibold"
             />
           </Link>
         </div>

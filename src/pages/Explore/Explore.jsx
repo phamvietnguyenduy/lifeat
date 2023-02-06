@@ -1,9 +1,10 @@
 import React from "react";
 //Components
-import Genres from "./Genres";
+
 import CollectionLayout from "./CollectionLayout";
 import Images from "../../assets/images";
 import Slide from "../../components/Slide";
+import Genres from "../../components/Genres";
 const slideItems = [
   {
     id: 1,

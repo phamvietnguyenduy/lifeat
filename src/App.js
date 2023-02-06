@@ -13,6 +13,7 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Explore = lazy(() => import("./pages/Explore/Explore"));
 const Help = lazy(() => import("./pages/Help/Help"));
 const SpaceHeader = lazy(() => import("./components/SpaceHeader"));
+const Showcase = lazy(() => import("./pages/Showcase/Showcase"));
 function App() {
   // // const { pathname } = useLocation();
   // // console.log(pathname);
@@ -28,6 +29,7 @@ function App() {
               <Route exact path="/space" element={<SpaceHeader />} />
               <Route exact path="/explore" element={<Explore />} />
               <Route path="/help/*" element={<Help />} />
+              <Route exact path="/showcase" element={<Showcase />} />
             </Routes>
           </BaseLayout>
         </Suspense>
