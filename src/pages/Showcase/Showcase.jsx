@@ -166,8 +166,8 @@ const Showcase = () => {
         </div>
         <div className="mx-auto grid grid-cols-2 lg:grid-cols-4 gap-x-3 lg:gap-x-6 gap-y-4 lg:gap-y-6 lg:w-fit">
           {Category.map(({ id, tittle, src }) => (
-            <Link>
-              <div key={id} className="w-fit">
+            <Link key={id}>
+              <div className="w-fit">
                 <CategoryArticle tittle={tittle} img={src} />
               </div>
             </Link>
