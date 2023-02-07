@@ -78,7 +78,7 @@ const Explore = () => {
               </h1>
               <img
                 className="w-full h-[22.5rem] rounded-lg"
-                src={Images.ig0}
+                src={Images.lofi}
                 alt="now_banner"
               />
             </div>
@@ -88,23 +88,23 @@ const Explore = () => {
               </h1>
               <div className="grid grid-rows-2 grid-flow-col gap-2">
                 <img
-                  className="w-full h-44 rounded-lg"
-                  src={Images.ig0}
+                  className="w-full h-44 rounded-lg object-cover"
+                  src={Images.train}
                   alt="now_banner"
                 />
                 <img
-                  className="w-full h-44 rounded-lg"
-                  src={Images.ig0}
+                  className="w-full h-44 rounded-lg object-cover"
+                  src={Images.Hongkong}
                   alt="now_banner"
                 />
                 <img
-                  className="w-full h-44 rounded-lg"
-                  src={Images.ig0}
+                  className="w-full h-44 rounded-lg object-cover"
+                  src={Images.bluesky}
                   alt="now_banner"
                 />
                 <img
-                  className="w-full h-44 rounded-lg"
-                  src={Images.ig0}
+                  className="w-full h-44 rounded-lg object-cover"
+                  src={Images.japanstreet}
                   alt="now_banner"
                 />
               </div>
