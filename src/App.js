@@ -10,6 +10,8 @@ const Explore = lazy(() => import("./pages/Explore/Explore"));
 const Help = lazy(() => import("./pages/Help/Help"));
 const SpaceHeader = lazy(() => import("./components/SpaceHeader"));
 const Showcase = lazy(() => import("./pages/Showcase/Showcase"));
+const Career = lazy(() => import("./pages/Career/Career"));
+
 function App() {
   const url = window.location.href;
 
@@ -26,6 +28,7 @@ function App() {
               <Route exact path="/help/introduction/*" element={<Details />} />
               <Route path="/help/*" element={<Help />} />
               <Route exact path="/showcase" element={<Showcase />} />
+              <Route exact path="/career" element={<Career />} />
             </Routes>
           </BaseLayout>
         </Suspense>

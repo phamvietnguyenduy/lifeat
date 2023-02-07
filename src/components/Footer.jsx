@@ -1,6 +1,7 @@
 import React from "react";
 import { FaDiscord, FaTwitter, FaTiktok } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
@@ -44,7 +45,7 @@ const Footer = () => {
               Help Center
             </p>
             <p className="text-base font-semibold text-gray-600 pt-3 hover:text-thBrick">
-              We are hiring!
+              <Link to="/career">We are hiring!</Link>
             </p>
           </div>
           <div className="pb-6">
