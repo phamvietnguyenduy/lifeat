@@ -38,7 +38,7 @@ const listData = [
     title: "Feel connected with others",
     content:
       "Improve morale by experiencing digital spaces with your team or friends",
-    reverse: { col1: "lg:col-[1]", col2: "col-[2]", row1: "lg:row-[1]" },
+    reverse: {},
   },
 ];
 
