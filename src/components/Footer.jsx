@@ -32,9 +32,11 @@ const Footer = () => {
         <div className="pt-12 grid lg:grid-cols-4 lg:gap-x-18 grid-cols-2 gap-x-3 gap-y-9">
           <div>
             <p className="font-extrabold pb-2 text-base">Product</p>
-            <p className="text-base font-semibold text-gray-600 pt-3 hover:text-thBrick">
-              How LifeAt Works
-            </p>
+            <Link to="/howlifeatwork">
+              <p className="text-base font-semibold text-gray-600 pt-3 hover:text-thBrick">
+                How LifeAt Works
+              </p>
+            </Link>
             <p className="text-base font-semibold text-gray-600 pt-3 hover:text-thBrick">
               Use cases
             </p>

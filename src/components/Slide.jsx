@@ -45,7 +45,7 @@ const Slide = ({ width }) => {
         breakpoints={{
           300: {
             // width: 576,
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           768: {
             // width: 768,
@@ -65,7 +65,7 @@ const Slide = ({ width }) => {
             <img
               src={name}
               alt={id}
-              className="lg:h-[25rem] lg:w-[25rem] w-full h-[30rem]  rounded-lg"
+              className="lg:h-[25rem] lg:w-[25rem] w-full h-[25rem]  rounded-lg"
             />
           </SwiperSlide>
         ))}

@@ -16,6 +16,9 @@ module.exports = {
       gridColumn: {
         column2: "grid-column: 2",
       },
+      fontFamily: {
+        solata: "Inconsolata",
+      },
     },
   },
 
