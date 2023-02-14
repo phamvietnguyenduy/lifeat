@@ -11,7 +11,7 @@ const SpaceSlide = ({ slide, headTit, smallTit }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
-    <div className="flex flex-col flex-col-reverse lg:px-32">
+    <div className="flex flex-col flex-col-reverse lg:px-32 mb-10">
       <div className="ml-3 lg:px-10">
         <Swiper
           className="mySwiper"

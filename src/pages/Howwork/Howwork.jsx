@@ -253,7 +253,7 @@ const Howwork = () => {
       <div>
         <SpaceSlide slide={Slide1} headTit={"New Space"} />
       </div>
-      <div>
+      <div className="pb-10">
         <SpaceSlide
           slide={Slide1}
           headTit={"Community Favs"}
