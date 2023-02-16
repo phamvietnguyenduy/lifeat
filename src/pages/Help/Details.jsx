@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import HelpHeader from "../../components/HelpHeader";
 
 const detailsData = [
   {
@@ -30,6 +31,7 @@ const Details = () => {
   console.log(data);
   return (
     <>
+      <HelpHeader />
       <main className="h-full  px-80 py-24 relative w-full text-gray-700 top-20 mb-28 bg-white ">
         <section>
           {data ? (

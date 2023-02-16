@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 //Content
 import ContentLayout from "./ContentLayout";
 import { computeHeadingLevel } from "@testing-library/react";
+import HelpHeader from "../../components/HelpHeader";
 
 //Pages
 const Introduction = lazy(() => import("./Content/Introduction"));
@@ -61,6 +62,7 @@ const Help = () => {
   let contentSection = render(pathname);
   return (
     <>
+      <HelpHeader />
       <main className="lg:flex lg:flex-row flex flex-col-reverse h-full justify-start relative w-full text-gray-700 top-20 mb-28">
         <nav className="lg:gap-2 lg:basis-1/6 w-full flex flex-col  bg-white px-6 pt-4">
           <Navigation data={navData} />
