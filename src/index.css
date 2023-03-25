@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;500;600;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Circula";
+  src: url("./assets/fonts/ccl.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "CirculaTit";
+  src: url("./assets/fonts/ccltit.woff2");
+}
+@font-face {
+  font-family: "CirculaBold";
+  src: url("./assets/fonts/cclbold.woff2");
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +27,9 @@
   h2 {
     font-size: 56px;
   }
+  .active {
+    color: #efa18f;
+  }
 }
 .swiper-wrapper {
   transition-timing-function: linear;
@@ -27,6 +43,28 @@
 .swiper-button-next {
   color: aqua;
 }
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.glass_item {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.bluechat::before {
+  background-size: 30px !important;
+  opacity: 0.075 !important;
+  background-repeat: repeat !important;
+  position: absolute !important;
+  z-index: 0;
+  width: 100%;
+  height: 150px;
+}
 @media screen and (min-width: 300px) {
   .swiper-container {
     width: 300px;
@@ -37,4 +75,22 @@
   .swiper-container {
     width: 768px;
   }
+}
+.trans-text {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #a3a3e1;
+  border-radius: 99px;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

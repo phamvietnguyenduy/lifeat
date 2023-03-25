@@ -1,7 +1,6 @@
-import React, { useCallback, useRef } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Lazy } from "swiper";
-import Images from "../../assets/images";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 //import swiper css
 import "./CustomNav.css";

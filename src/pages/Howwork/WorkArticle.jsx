@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Btn from "./Btn";
-import Images from "../../assets/images";
+
 const WorkArticle = ({ tit, descr, img, url, textBtn, css }) => {
   return (
     <div

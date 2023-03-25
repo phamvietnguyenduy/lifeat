@@ -11,14 +11,15 @@ const Help = lazy(() => import("./pages/Help/Help"));
 const SpaceHeader = lazy(() => import("./components/SpaceHeader"));
 const Showcase = lazy(() => import("./pages/Showcase/Showcase"));
 const Career = lazy(() => import("./pages/Career/Career"));
-
 const Howwork = lazy(() => import("./pages/Howwork/Howwork"));
+const Space = lazy(() => import("./pages/Space/Space"));
 function App() {
   const url = window.location.href;
 
   return (
     <>
       {url.includes("/help") && <HelpHeader />}
+      {url.includes("/lifeatspace")}
       <BrowserRouter>
         <Suspense fallback={<div>Loading...</div>}>
           <BaseLayout>
@@ -31,6 +32,7 @@ function App() {
               <Route exact path="/showcase" element={<Showcase />} />
               <Route exact path="/career" element={<Career />} />
               <Route exact path="/howlifeatwork" element={<Howwork />} />
+              <Route exact path="/lifeatspace" element={<Space />} />
             </Routes>
           </BaseLayout>
         </Suspense>

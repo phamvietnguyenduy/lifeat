@@ -30,5 +30,17 @@ const Images = {
   bluesky: require("./bluesky.jpeg"),
   cozyroom: require("./cozyroom.jpeg"),
   fuji: require("./fuji.jpeg"),
+  desktop: require("./desktop.jpg"),
+  beach_icon: require("./beach_icon.png"),
+  cf_icon: require("./cf_icon.png"),
+  city_icon: require("./city_icon.png"),
+  crystalball_icon: require("./crystal-ball_icon.png"),
+  mountain_icon: require("./mountain_icon.png"),
+  book: require("./book.png"),
+  mac: require("./mac.png"),
+  galaxy: require("./galaxy.png"),
+  art: require("./art.png"),
+  snow: require("./snow.png"),
+  pet: require("./pet.png"),
 };
 export default Images;

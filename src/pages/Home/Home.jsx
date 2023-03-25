@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import Images from "../../assets/images";
 import Articles from "./Articles";
@@ -76,6 +76,9 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
   }, [width]);
+  useLayoutEffect(() => {
+    document.body.style = "overflow-y:auto";
+  }, []);
   return (
     <div className="relative top-40 py-5 z-0">
       <div className="thumb mx-auto lg:w-1/2 h-[23rem] flex items-center">
@@ -156,24 +159,22 @@ const Home = () => {
       <div className="lg:pb-40">
         <Articles Scrollcheck={scrollPosition} width={width} />
       </div>
-      {listData.map((data) => (
-        <>
-          <div className="lg:pt-40">
-            <AniArticles
-              scrollCheck={scrollPosition}
-              yMin={data.yMin}
-              yMax={data.yMax}
-              ymblMin={data.ymblMin}
-              ymblMax={data.ymblMax}
-              mousePos={localMousePos}
-              imgSrc={data.src}
-              title={data.title}
-              content={data.content}
-              reverse={data.reverse}
-              width={width}
-            />
-          </div>
-        </>
+      {listData.map((data, index) => (
+        <div key={index} className="lg:pt-40">
+          <AniArticles
+            scrollCheck={scrollPosition}
+            yMin={data.yMin}
+            yMax={data.yMax}
+            ymblMin={data.ymblMin}
+            ymblMax={data.ymblMax}
+            mousePos={localMousePos}
+            imgSrc={data.src}
+            title={data.title}
+            content={data.content}
+            reverse={data.reverse}
+            width={width}
+          />
+        </div>
       ))}
       <div className="pt-40 pb-16">
         <p className="text-3xl lg:text-4xl font-bold text-thBlack text-center">
