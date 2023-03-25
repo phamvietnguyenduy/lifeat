@@ -149,7 +149,7 @@ const ListSpace = ({ Space_filter }) => {
         <p className="text-sm text-thBlack font-medium max-w-[14rem]">
           Submit your own content for a chance to be featured on LifeAt.
         </p>
-        <Link to="/showcase">
+        <Link to="/lifeatspace">
           <div className="flex bg-[#455bff] items-center justify-center py-3 rounded-2xl mt-4 ">
             <p className=" text-white text-center text-sm font-medium ">
               Showcase
