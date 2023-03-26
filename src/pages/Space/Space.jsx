@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SideBar from "./SideBar";
 import { GoTriangleRight, GoTriangleLeft } from "react-icons/go";
-import manstudy from "../../assets/video4k/manstudy.jpg";
+import lfgbg from "../../assets/video4k/lfgbg.gif";
 import ControlBar from "./ControlBar";
 import Invite from "./Invite";
 import Boxchat from "./Boxchat/Boxchat";
@@ -35,7 +35,7 @@ const Space = () => {
         {/* <video autoPlay loop muted className="object-cover w-full h-full">
           <source src={peak} type="video/mp4" />
         </video> */}
-        <img src={manstudy} alt="" className="w-screen h-screen" />
+        <img src={lfgbg} alt="" className="w-screen h-screen" />
       </div>
       <div className="box">
         <div
