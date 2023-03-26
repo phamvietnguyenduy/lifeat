@@ -10,8 +10,8 @@ import Track from "./Track";
 const apiClient = axios.create({
   baseURL: "https://api.spotify.com/v1/",
 });
-const clientId = "f41d8d94118c4f85b420bafd16803ebe";
-const redirectUri = "http://localhost:3000/lifeatspace";
+const clientId = "3391d647cb654818800fd295ffd04401";
+const redirectUri = "https://lifeat-7l8k.vercel.app/lifeatspace";
 const authEndpoint = "https://accounts.spotify.com/authorize?";
 const scope = [
   "playlist-read-private",
