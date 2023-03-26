@@ -21,7 +21,14 @@ function App() {
       {url.includes("/help") && <HelpHeader />}
       {url.includes("/lifeatspace")}
       <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="w-screen h-screen flex flex-col justify-center items-center gap-y-4">
+              <p className="text-thDark text-5xl font-bold mt-10">Loading...</p>
+              <div className="loadbar"></div>
+            </div>
+          }
+        >
           <BaseLayout>
             <Routes>
               <Route exact path="/" element={<Home />} />

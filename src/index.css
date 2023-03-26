@@ -94,3 +94,25 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+.loadbar {
+  width: 400px;
+  height: 30px;
+  background: repeating-linear-gradient(to right, #fd9, #9df, #9fd, #df9, #fd9);
+  animation: animate 4s linear infinite;
+  background-size: 500%;
+  border: 4px solid black;
+}
+/* .loadbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+} */
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -500% 0;
+  }
+}
