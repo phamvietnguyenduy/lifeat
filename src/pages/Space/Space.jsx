@@ -5,6 +5,7 @@ import lfgbg from "../../assets/video4k/lfgbg.gif";
 import ControlBar from "./ControlBar";
 import Invite from "./Invite";
 import Boxchat from "./Boxchat/Boxchat";
+import Chatbox from "./Boxchat/Chatbox";
 const Space = () => {
   const [checkInout, setcheckInout] = useState(true);
   const [css, setcss] = useState({});
@@ -56,6 +57,7 @@ const Space = () => {
         <SideBar css={css} />
         <Invite css={css} />
         <Boxchat />
+        <Chatbox />
       </div>
     </div>
   );

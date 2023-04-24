@@ -9,7 +9,7 @@ const Boxchat = () => {
   return (
     <div className="">
       <div
-        className="glass text-white w-14 h-14 rounded-full grid place-items-center fixed right-20 bottom-3"
+        className="glass text-white w-14 h-14 rounded-full grid place-items-center fixed right-24 bottom-3"
         onClick={() => {
           isVisble === "hidden" ? setisVisble("block") : setisVisble("hidden");
         }}
