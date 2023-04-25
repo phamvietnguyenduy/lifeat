@@ -37,7 +37,7 @@ function App() {
               <Route exact path="/help/introduction/*" element={<Details />} />
               <Route path="/help/*" element={<Help />} />
               <Route exact path="/showcase" element={<Showcase />} />
-              <Route exact path="/career" element={<Career />} />
+              <Route exact path="/careers" element={<Career />} />
               <Route exact path="/howlifeatwork" element={<Howwork />} />
               <Route exact path="/lifeatspace" element={<Space />} />
             </Routes>

@@ -37,9 +37,11 @@ const Header = () => {
       >
         <div className="flex flex-row justify-between items-center mx-auto px-6 h-full">
           <div className="flex w-1/2 items-center ">
-            <h1 className="text-gray-700 font-medium tracking-widest text-2xl">
-              LifeAt
-            </h1>
+            <Link to="/">
+              <h1 className="text-gray-700 font-medium tracking-widest text-2xl cursor-pointer">
+                LifeAt
+              </h1>
+            </Link>
             <Link to="/space">
               <input
                 type="text"

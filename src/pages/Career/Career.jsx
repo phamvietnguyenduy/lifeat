@@ -1,5 +1,6 @@
 import React from "react";
 import Article from "./Article";
+import Images from "../../assets/images";
 const jobs = [
   {
     title: "Senior Full-stack Software Engineer",
@@ -19,17 +20,17 @@ const values = [
   {
     title: "Team Player",
     desc: "You love to co-create and build on top of each other ideas",
-    img: "https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2F0ce99902-24a9-45f4-a60e-885ab3de9404.png&w=640&q=80",
+    img: Images.book3d,
   },
   {
     title: "Team Player",
     desc: "You love to co-create and build on top of each other ideas",
-    img: "https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2F0ce99902-24a9-45f4-a60e-885ab3de9404.png&w=640&q=80",
+    img: Images.heart,
   },
   {
     title: "Team Player",
     desc: "You love to co-create and build on top of each other ideas",
-    img: "https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2F0ce99902-24a9-45f4-a60e-885ab3de9404.png&w=640&q=80",
+    img: Images.gen,
   },
 ];
 
@@ -40,13 +41,13 @@ const sections = [
         desc: "LifeAt is building modular productivity/focus software for people like you! Our mission is to prevent focus drift by making it simple to manage your productivity, so you can spend more time getting your actual work done.",
       },
     ],
-    img: "https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2Fdb325d62-bd79-4a65-8c60-a66860307464.png&w=1920&q=80",
+    img: Images.girl,
     reverse: false,
     listStyle: false,
   },
   {
     title: "Who are we",
-    img: "https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2Fa75c6e71-c637-4f93-809c-626629cd9288.png&w=1920&q=80",
+    img: Images.chart3d,
     list: [
       {
         desc: "Our founding team met while working on another startup idea at UP. We went through Y Combinator Winter 2022 and raised our seed round right after. ",
@@ -61,7 +62,7 @@ const sections = [
   {
     title: "Investor",
     desc: "LifeAt has raised an over-subbed Seed Round from top tier Venture Capital funds and angels.",
-    img: "https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2Fa75c6e71-c637-4f93-809c-626629cd9288.png&w=1920&q=80",
+    img: Images.chart3d,
     list: [
       {
         desc: "Y Combinator",
@@ -135,7 +136,11 @@ const Career = () => {
         <div className="grid grid-cols-3 gap-6">
           {values.map((value, index) => (
             <div key={index}>
-              <img src={value.img} alt={value.title} className="pb-5" />
+              <img
+                src={value.img}
+                alt={value.title}
+                className="pb-5 w-[144px] h-[144px]"
+              />
               <h3 className="font-bold tracking-wide text-2xl pb-5">
                 {value.title}
               </h3>
@@ -149,22 +154,18 @@ const Career = () => {
           Our team has learned our craft in various high-growth environments
         </p>
         <div className="grid grid-cols-4 gap-12">
-          <img
-            src="https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2F3f4d2977-b589-4dfc-94c1-2be4ee4849e2.png&w=640&q=80"
-            alt="Google"
-          />
+          <img src={Images.logo3} alt="Google" className="-mt-5" />
           <img
             src="https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2Fa69ccb39-7a82-470d-a51b-7802a3361525.png&w=1920&q=80"
             alt="Tiktok"
+            className="py-3"
           />
           <img
             src="https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2Fea4f06fa-ffad-4dc6-a237-2ac43a1bde0a.png&w=1920&q=80"
             alt="Tableau"
+            className="py-3"
           />
-          <img
-            src="https://philosophical-crayfish.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F66e82836-0ba1-4402-bf8e-1414f8a6f1f8%2Fimages%2F71447c15-2ed9-4647-8426-7153e3846a77.png&w=1920&q=80"
-            alt="Vimeo"
-          />
+          <img src={Images.logo4} alt="Vimeo" />
         </div>
       </section>
     </main>

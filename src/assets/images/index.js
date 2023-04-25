@@ -42,5 +42,10 @@ const Images = {
   art: require("./art.png"),
   snow: require("./snow.png"),
   pet: require("./pet.png"),
+  girl: require("./girl.webp"),
+  chart3d: require("./3dchart.webp"),
+  gen: require("./Frame_49.webp"),
+  heart: require("./Frame_51.webp"),
+  book3d: require("./Frame_50.webp"),
 };
 export default Images;

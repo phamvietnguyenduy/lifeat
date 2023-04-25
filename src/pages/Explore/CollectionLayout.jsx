@@ -10,11 +10,9 @@ import "swiper/css/lazy";
 
 const CollectionLayout = ({ title, description, imgData }) => {
   return (
-    <div className="space-y-4">
-      <h1 className="font-bold text-gray-700 text-3xl lg:tracking-wide tracking-tight">
-        {title}
-      </h1>
-      <h2 className="text-black font-normal text-base">{description}</h2>
+    <div className="">
+      <h1 className="font-bold text-2xl text-gray-700">{title}</h1>
+      <h2 className="text-gray-500 font-normal text-sm mb-4">{description}</h2>
       <section>
         <Swiper
           // install Swiper modules
@@ -31,7 +29,6 @@ const CollectionLayout = ({ title, description, imgData }) => {
               slidesPerGroup: 4,
             },
           }}
-          spaceBetween={30}
           lazy={true}
           loopFillGroupWithBlank={true}
           pagination={{
@@ -44,14 +41,18 @@ const CollectionLayout = ({ title, description, imgData }) => {
         >
           {imgData.map(({ id, name, title, desc }) => (
             <SwiperSlide key={id} className="text-center">
-              <img
-                data-src={name}
-                alt={id}
-                className="h-[15rem] w-[15rem] rounded-lg swiper-lazy pb-2"
-              />
+              <div className="rounded-lg w-fit h-[9rem] mb-2">
+                <img
+                  data-src={name}
+                  alt={id}
+                  className="w-[15rem] rounded-lg swiper-lazy object-cover"
+                />
+              </div>
               <div className="text-left space-y-2">
-                <h2 className="text-lg font-bold text-black">{title}</h2>
-                <p className="text-sm text-gray-600">{desc}</p>
+                <h2 className="text-base font-bold text-black max-w-[15rem]">
+                  {title}
+                </h2>
+                <p className="text-sm text-gray-500">{desc}</p>
               </div>
 
               <div className="swiper-lazy-preloader swiper-lazy-preloader-black" />
